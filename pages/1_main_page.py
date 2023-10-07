@@ -12,16 +12,7 @@ import streamlit as st
 df = pd.read_csv('../dataset/zomato.csv')
     
 ############LIMPEZA###################
-import subprocess
 
-# Nome da biblioteca que você deseja instalar
-package_name = "inflection"
-
-try:
-    subprocess.check_call(["pip", "install", package_name])
-    print(f"A biblioteca '{package_name}' foi instalada com sucesso.")
-except subprocess.CalledProcessError as e:
-    print(f"Erro ao instalar '{package_name}': {e}")
 
 
 
