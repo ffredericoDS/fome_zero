@@ -1,5 +1,7 @@
 #libraries
 
+
+
 import plotly.express as px
 import pandas as pd
 import inflection
@@ -7,7 +9,7 @@ import streamlit as st
 
 
 
-df = pd.read_csv('dataset/zomato.csv')
+df = pd.read_csv('../dataset/zomato.csv')
     
 ############LIMPEZA###################
 COUNTRIES = {
