@@ -14,21 +14,23 @@ st.sidebar.markdown("""----""")
 st.markdown(
     """
     # Fome zero Dashboard
-    O fome zero foi construído para acompanhar as métricas de crescimento dos restaurantes.
+    O projeto 'Fome Zero' é uma plataforma desenvolvida com o objetivo de acompanhar as métricas de crescimento dos restaurantes.
+    Diante do cenário atual dos dados, surge a necessidade de uma ferramenta que permita analisar e comparar diferentes aspectos dos
+    estabelecimentos gastronômicos para que você possa escolher a melhor opção para você.
 
     ## Como utilizar este Growth Dashboard?
     - **Visão main page**:
         - Métricas gerais do dashboard
     
     - **Visão contries**:
-        - Métricas gerais por cidade
+        - Métricas gerais por países
         
 
     - **Visão cities**:
         - Métricas gerais das cidades
 
     - **Visão cuisines**:
-        - Métricas gerais das culinarias
+        - Métricas gerais por culinarias
 
     ## ASK FOR HELP
     Você pode entrar em contato com o nosso time de Data Science:
