@@ -45,7 +45,7 @@ Os 3 principais visões do negócio foram: Visão países, visão cidade e visã
 # 4. O produto final do projeto
 Painel online, hospedado em um Cloud e disponível para acesso em
 qualquer dispositivo conectado à internet.
-O painel pode ser acessado através desse link: https://project-company-curry.streamlit.app/
+O painel pode ser acessado através desse link: [https://project-fome-zero.streamlit.app/](https://project-fome-zero.streamlit.app/)
 
 
 # 5. Conclusão
