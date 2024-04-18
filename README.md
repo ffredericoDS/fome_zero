@@ -38,6 +38,10 @@ Os 3 principais visões do negócio foram: Visão países, visão cidade e visã
 3. Indonésia e Filipinas são os dois países que contêm a maior quantidade de restaurantes com as melhores médias de avaliação.
 4. A cidade de Kolkata, na Índia, é a cidade que possui a maior quantidade de melhores restaurantes, com cerca de 80 restaurantes.
 
+# Feramentas utilizadas:
+1. python
+2. streamlit
+
 # 4. O produto final do projeto
 Painel online, hospedado em um Cloud e disponível para acesso em
 qualquer dispositivo conectado à internet.
@@ -52,11 +56,11 @@ que exibam essas métricas da melhor forma possível para o CEO.
 
 
 # 6. Próximo passos
-Aumentar a quantidade de dados no dataset
-Criar novos filtros.
-adicionar novas visões de negócio.
-novas analises 
-adicionar mais paises,cidades,culinarias distintas 
+Aumentar a quantidade de dados no dataset,
+Criar novos filtros,
+adicionar novas visões de negócio,
+novas analises ,
+adicionar mais paises,cidades,culinarias distintas .
 
 
 
