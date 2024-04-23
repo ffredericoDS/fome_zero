@@ -167,10 +167,6 @@ df = df.loc[linhas_selecionadas,:]
 ## centro 
 
 st.title('Fome Zero')
-st.header('A "Fome Zero" é uma plataforma online que reúne informações e análises sobre diversos restaurantes, \
-permitindo aos usuários encontrar facilmente opções gastronômicas de acordo com suas preferências e necessidades. \
-A plataforma coleta uma variedade de dados sobre os restaurantes, incluindo avaliações, tipos de culinária, \
-localização e outras informações relevantes.')
 st.subheader('Temos as seguintes marcas dentro da plataforma:')
 
 with st.container():
