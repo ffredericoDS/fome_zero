@@ -166,6 +166,9 @@ df = df.loc[linhas_selecionadas,:]
 
 ## centro 
 
+
+
+
 st.title('Fome Zero')
 st.subheader('Temos as seguintes marcas dentro da plataforma:')
 
