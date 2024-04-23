@@ -33,7 +33,7 @@ st.markdown(
         - Métricas gerais por culinarias
 
     ## ASK FOR HELP
-    Você pode entrar em contato com o nosso time de Data Science:
+    Você pode entrar em contato com o nosso time de Data Science.:
     - gmail: frederico.pereira020@gmail.com
     """
 )
