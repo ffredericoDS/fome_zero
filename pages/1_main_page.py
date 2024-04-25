@@ -1,6 +1,3 @@
-#libraries
-# Libraries
-import inflection
 import pandas as pd
 import streamlit as st
 import folium
@@ -10,38 +7,34 @@ from streamlit_folium import folium_static
 # Leitura do arquivo CSV
 df = pd.read_csv('dataset/zomato.csv')
 
-# Dicionário de países
-COUNTRIES = {
-    1: "India",
-    14: "Australia",
-    30: "Brazil",
-    37: "Canada",
-    94: "Indonesia",
-    148: "New Zeland",
-    162: "Philippines",
-    166: "Qatar",
-    184: "Singapore",
-    189: "South Africa",
-    191: "Sri Lanka",
-    208: "Turkey",
-    214: "United Arab Emirates",
-    215: "England",
-    216: "United States of America",
-}
-
 # Função para mapear o nome do país pelo código
 def country_name(country_id):
-    return COUNTRIES[country_id]
+    COUNTRIES = {
+        1: "India",
+        14: "Australia",
+        30: "Brazil",
+        37: "Canada",
+        94: "Indonesia",
+        148: "New Zeland",
+        162: "Philippines",
+        166: "Qatar",
+        184: "Singapore",
+        189: "South Africa",
+        191: "Sri Lanka",
+        208: "Turkey",
+        214: "United Arab Emirates",
+        215: "England",
+        216: "United States of America",
+    }
+    return COUNTRIES.get(country_id)
 
 # Aplicando a função para criar uma nova coluna 'Country'
 df['Country'] = df['Country Code'].apply(country_name)
 
-# Outras funções de limpeza de dados (create_price_type, color_name, rename_columns) ...
-
 # Função para renderizar o mapa com os restaurantes
 def render_map(df):
     # Seleção das colunas desejadas
-    colunas = ['restaurant_id', 'restaurant_name', 'city', 'average_cost_for_two', 'currency', 'longitude', 'latitude', 'cuisines', 'aggregate_rating', 'rating_text']
+    colunas = ['restaurant_name', 'city', 'average_cost_for_two', 'currency', 'longitude', 'latitude', 'cuisines', 'aggregate_rating', 'rating_text']
     df = df[colunas]
     
     # Criar um mapa Folium
@@ -62,7 +55,9 @@ def render_map(df):
     for index, location_info in df.iterrows():
         # Adicionar marcadores com informações relevantes
         folium.Marker([location_info['latitude'], location_info['longitude']],
-                      popup=f"Nome: {location_info['restaurant_name']}<br>Custo Médio: {location_info['average_cost_for_two']} {location_info['currency']}<br>Rating: {location_info['aggregate_rating']}",
+                      popup=f"Nome: {location_info['restaurant_name']}"
+                            f"<br>Custo Médio: {location_info['average_cost_for_two']} {location_info['currency']}"
+                            f"<br>Rating: {location_info['aggregate_rating']}",
                       icon=folium.Icon(color=cor(location_info['rating_text']), icon='home')).add_to(marker_cluster)
 
     # Exibir o mapa no Streamlit
@@ -106,7 +101,7 @@ with st.sidebar:
 with st.container():
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        df_grouped = df['restaurant_id'].nunique()
+        df_grouped = df['restaurant_name'].nunique()  # Corrigido aqui
         col1.metric('Quantidade de restaurantes:', df_grouped)
         
     with col2:
@@ -118,7 +113,7 @@ with st.container():
         col3.metric('Quantidade de cidades', df_grouped)  
         
     with col4:
-        df_grouped = df['votes'].sum()
+        df_grouped = df['votes'].sum()  # Adicionei essa linha para corrigir o erro
         col4.metric('Avaliações feitas:', df_grouped)
         
     with col5:
@@ -128,6 +123,3 @@ with st.container():
 # Renderizar o mapa
 with st.container():
     render_map(df)
-
-
-            
