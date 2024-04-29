@@ -34,7 +34,7 @@ df['Country'] = df['Country Code'].apply(country_name)
 # Função para renderizar o mapa com os restaurantes
 def render_map(df):
     # Seleção das colunas desejadas
-    colunas = ['restaurant_name', 'city', 'average_cost_for_two', 'currency', 'longitude', 'latitude', 'cuisines', 'aggregate_rating', 'rating_text']
+    colunas = ['restaurant_id', 'city', 'average_cost_for_two', 'currency', 'longitude', 'latitude', 'cuisines', 'aggregate_rating', 'rating_text']
     df = df[colunas]
     
     # Criar um mapa Folium
@@ -101,7 +101,7 @@ with st.sidebar:
 with st.container():
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        df_grouped = df['restaurant_name'].nunique()  # Corrigido aqui
+        df_grouped = df['restaurant_id'].nunique()  # Corrigido aqui
         col1.metric('Quantidade de restaurantes:', df_grouped)
         
     with col2:
