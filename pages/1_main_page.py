@@ -95,31 +95,32 @@ with st.sidebar:
     )
 
     linhas_selecionadas = df['Country'].isin(options)
-    df = df.loc[linhas_selecionadas,:]
+    df_filtered = df.loc[linhas_selecionadas,:].copy()  # Renomeie aqui
 
 # Centro
 with st.container():
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
-        df_grouped = df['restaurant_id'].nunique()  # Corrigido aqui
+        df_grouped = df_filtered['restaurant_id'].nunique()  # Alterado aqui
         col1.metric('Quantidade de restaurantes:', df_grouped)
         
     with col2:
-        df_grouped = df['Country'].nunique()
+        df_grouped = df_filtered['Country'].nunique()  # Alterado aqui
         col2.metric('Países cadastrados', df_grouped)
         
     with col3:
-        df_grouped = df["city"].nunique()
+        df_grouped = df_filtered["city"].nunique()  # Alterado aqui
         col3.metric('Quantidade de cidades', df_grouped)  
         
     with col4:
-        df_grouped = df['votes'].sum()  # Adicionei essa linha para corrigir o erro
+        df_grouped = df_filtered['votes'].sum()  # Alterado aqui
         col4.metric('Avaliações feitas:', df_grouped)
         
     with col5:
-        df_grouped = df['cuisines'].nunique()
+        df_grouped = df_filtered['cuisines'].nunique()  # Alterado aqui
         col5.metric('Tipos de culinária:', df_grouped)
 
 # Renderizar o mapa
 with st.container():
-    render_map(df)
+    render_map(df_filtered)  # Alterado aqui também
+
